@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16A323" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Address" representedClassName=".Address" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="country_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="state_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="state_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="orderInfoBilling" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrderInfo" inverseName="billing_address" inverseEntity="OrderInfo" syncable="YES"/>
+        <relationship name="orderInfoShipping" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrderInfo" inverseName="shipping_address" inverseEntity="OrderInfo" syncable="YES"/>
+    </entity>
+    <entity name="Banner" representedClassName=".Banner" syncable="YES">
+        <attribute name="bannerHeight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="category_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dimensions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="is_list" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Cart" representedClassName=".Cart" syncable="YES">
+        <attribute name="available_reward_points" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="discount_coupon_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="discounted_cart_amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gift_card_amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="group_not_excluded" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="points_per_unit_amount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="reward_points" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OrderItem" inverseName="cart" inverseEntity="OrderItem" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parent_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Country" representedClassName=".Country" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="iso" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iso3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Customer" representedClassName=".Customer" syncable="YES">
+        <attribute name="access_token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expires_in" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="refresh_token" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DiscountCoupon" representedClassName=".DiscountCoupon" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expires_on" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flat_rate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="percentage" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="product_category" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="product_sku" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchase_limit" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="store_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FavouriteProduct" representedClassName=".FavouriteProduct" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Filter" representedClassName=".Filter" syncable="YES">
+        <attribute name="attribute_index" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="filter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FilterGroup" inverseName="values" inverseEntity="FilterGroup" syncable="YES"/>
+    </entity>
+    <entity name="FilterGroup" representedClassName=".FilterGroup" syncable="YES">
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="values" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Filter" inverseName="filter" inverseEntity="Filter" syncable="YES"/>
+    </entity>
+    <entity name="OrderInfo" representedClassName=".OrderInfo" syncable="YES">
+        <attribute name="actual_amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="discount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="discounted_amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="grand_total" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="is_viewed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order_process_status_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sub_total" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax_amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="total_items" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="billing_address" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Address" inverseName="orderInfoBilling" inverseEntity="Address" syncable="YES"/>
+        <relationship name="order_line_items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OrderItem" inverseName="orderInfo" inverseEntity="OrderItem" syncable="YES"/>
+        <relationship name="order_status" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="OrderStatus" inverseName="orderInfo" inverseEntity="OrderStatus" syncable="YES"/>
+        <relationship name="shipping_address" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Address" inverseName="orderInfoShipping" inverseEntity="Address" syncable="YES"/>
+    </entity>
+    <entity name="OrderItem" representedClassName=".OrderItem" syncable="YES">
+        <attribute name="actual_price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="custom_details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="discounted_price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="max_quantity_possible" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sku" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="variant_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="vendor_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="cart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cart" inverseName="items" inverseEntity="Cart" syncable="YES"/>
+        <relationship name="orderInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrderInfo" inverseName="order_line_items" inverseEntity="OrderInfo" syncable="YES"/>
+    </entity>
+    <entity name="OrderStatus" representedClassName=".OrderStatus" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="orderInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrderInfo" inverseName="order_status" inverseEntity="OrderInfo" syncable="YES"/>
+    </entity>
+    <entity name="Pincode" representedClassName=".Pincode" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAvailable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName=".Product" syncable="YES">
+        <attribute name="category_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="custom_attributes" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detailed_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isFeatured" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isRecent" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isRelated" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isSimilar" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="minimum_stock_level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="permalink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="previous_price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="product_image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="track_quantity" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="default_variant" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ProductVariant" inverseName="product" inverseEntity="ProductVariant" syncable="YES"/>
+        <relationship name="filter_attributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ProductFilterAttribute" inverseName="product" inverseEntity="ProductFilterAttribute" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ProductImage" inverseName="product" inverseEntity="ProductImage" syncable="YES"/>
+        <relationship name="options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProductOption" inverseName="product" inverseEntity="ProductOption" syncable="YES"/>
+        <relationship name="relatedProducts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="relatedProducts" inverseEntity="Product" syncable="YES"/>
+        <relationship name="variants" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ProductVariant" inverseName="productOfVariant" inverseEntity="ProductVariant" syncable="YES"/>
+    </entity>
+    <entity name="ProductFilterAttribute" representedClassName=".ProductFilterAttribute" syncable="YES">
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="values" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="filter_attributes" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="ProductImage" representedClassName=".ProductImage" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="images" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="ProductOption" representedClassName=".ProductOption" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="options" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="ProductVariant" representedClassName=".ProductVariant" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="minimum_stock_level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="option1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="option2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="option3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="previous_price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sku" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="default_variant" inverseEntity="Product" syncable="YES"/>
+        <relationship name="productOfVariant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="variants" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="RecentProduct" representedClassName=".RecentProduct" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="RecentSearch" representedClassName=".RecentSearch" syncable="YES">
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="searchString" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="State" representedClassName=".State" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="insertedOn" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Address" positionX="-522" positionY="-117" width="128" height="285"/>
+        <element name="Banner" positionX="99" positionY="-273" width="128" height="165"/>
+        <element name="Cart" positionX="-531" positionY="-126" width="128" height="210"/>
+        <element name="Category" positionX="-162" positionY="-270" width="128" height="135"/>
+        <element name="Country" positionX="-531" positionY="-126" width="128" height="135"/>
+        <element name="Customer" positionX="-531" positionY="-126" width="128" height="165"/>
+        <element name="DiscountCoupon" positionX="-531" positionY="-126" width="128" height="255"/>
+        <element name="FavouriteProduct" positionX="-531" positionY="-126" width="128" height="150"/>
+        <element name="Filter" positionX="-729" positionY="33" width="128" height="120"/>
+        <element name="FilterGroup" positionX="-470" positionY="-171" width="128" height="105"/>
+        <element name="OrderInfo" positionX="-531" positionY="-126" width="128" height="330"/>
+        <element name="OrderItem" positionX="-522" positionY="-117" width="128" height="300"/>
+        <element name="OrderStatus" positionX="-513" positionY="-108" width="128" height="90"/>
+        <element name="Pincode" positionX="-531" positionY="-126" width="128" height="75"/>
+        <element name="Product" positionX="-45" positionY="39" width="128" height="465"/>
+        <element name="ProductFilterAttribute" positionX="-531" positionY="-126" width="128" height="120"/>
+        <element name="ProductImage" positionX="450" positionY="-207" width="128" height="118"/>
+        <element name="ProductOption" positionX="-522" positionY="-117" width="128" height="105"/>
+        <element name="ProductVariant" positionX="-531" positionY="-126" width="128" height="270"/>
+        <element name="RecentProduct" positionX="-531" positionY="-126" width="128" height="90"/>
+        <element name="RecentSearch" positionX="-531" positionY="-126" width="128" height="90"/>
+        <element name="State" positionX="-522" positionY="-117" width="128" height="105"/>
+    </elements>
+</model>
