@@ -1,2 +1,2 @@
 # ios_source
-Source code of android store app
+Source code of iOS store app
